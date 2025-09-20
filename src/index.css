@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mental Wellness App Design System - Calming & Youth-Focused */
+
+@layer base {
+  :root {
+    /* Calming background gradient */
+    --background: 240 100% 98%;
+    --background-subtle: 245 50% 96%;
+    --foreground: 230 15% 15%;
+
+    /* Card system with gentle elevation */
+    --card: 0 0% 100%;
+    --card-foreground: 230 15% 15%;
+    --card-soft: 250 100% 97%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 15% 15%;
+
+    /* Primary - Calming lavender */
+    --primary: 250 55% 65%;
+    --primary-soft: 250 40% 85%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Gentle mint */
+    --secondary: 160 40% 75%;
+    --secondary-soft: 160 30% 90%;
+    --secondary-foreground: 160 60% 15%;
+
+    /* Tertiary - Warm peach */
+    --tertiary: 25 80% 75%;
+    --tertiary-soft: 25 60% 90%;
+    --tertiary-foreground: 25 40% 15%;
+
+    /* Muted tones */
+    --muted: 240 20% 94%;
+    --muted-foreground: 230 10% 50%;
+
+    /* Accent - Soft coral for highlights */
+    --accent: 350 65% 80%;
+    --accent-soft: 350 45% 92%;
+    --accent-foreground: 350 60% 20%;
+
+    /* Success & wellness */
+    --success: 140 50% 70%;
+    --success-soft: 140 35% 88%;
+    --success-foreground: 140 60% 20%;
+
+    /* Warning - Gentle amber */
+    --warning: 40 70% 75%;
+    --warning-soft: 40 50% 88%;
+    --warning-foreground: 40 60% 20%;
+
+    /* Gentle destructive */
+    --destructive: 0 50% 75%;
+    --destructive-soft: 0 35% 90%;
+    --destructive-foreground: 0 60% 25%;
+
+    /* Borders and inputs */
+    --border: 240 30% 88%;
+    --border-soft: 240 20% 92%;
+    --input: 240 25% 94%;
+    --ring: 250 55% 65%;
+
+    /* Enhanced radius for softer feel */
+    --radius: 1rem;
+    --radius-sm: 0.75rem;
+    --radius-lg: 1.5rem;
+
+    /* Gradients for calming effects */
+    --gradient-primary: linear-gradient(135deg, hsl(250, 55%, 65%), hsl(270, 45%, 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(160, 40%, 75%), hsl(180, 35%, 80%));
+    --gradient-tertiary: linear-gradient(135deg, hsl(25, 80%, 75%), hsl(45, 70%, 80%));
+    --gradient-background: linear-gradient(180deg, hsl(240, 100%, 98%), hsl(245, 50%, 96%));
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(240, 30%, 97%));
+
+    /* Shadows for gentle elevation */
+    --shadow-soft: 0 2px 10px -2px hsl(250, 55%, 65%, 0.1);
+    --shadow-medium: 0 4px 20px -4px hsl(250, 55%, 65%, 0.15);
+    --shadow-strong: 0 8px 30px -6px hsl(250, 55%, 65%, 0.2);
+
+    /* Animations */
+    --transition-gentle: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-b from-background to-background-subtle text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Chat bubble animations */
+  .chat-bubble-enter {
+    @apply animate-in slide-in-from-bottom-2 fade-in-0 duration-500;
+  }
+  
+  .chat-bubble-typing {
+    @apply animate-pulse;
+  }
+
+  /* Mood selector with gentle animations */
+  .mood-emoji {
+    @apply transition-all duration-300 hover:scale-125 cursor-pointer;
+  }
+  
+  .mood-emoji.selected {
+    @apply scale-125 bg-primary/20 rounded-full p-2;
+  }
+
+  /* Progress rings */
+  .progress-ring {
+    @apply transition-all duration-700 ease-out;
+  }
+
+  /* Floating action button */
+  .floating-button {
+    @apply fixed bottom-6 right-6 z-50 rounded-full shadow-strong 
+           bg-gradient-to-r from-primary to-accent 
+           text-primary-foreground p-4 
+           transition-all duration-300 hover:scale-110 hover:shadow-medium;
+  }
+
+  /* Card variations */
+  .wellness-card {
+    @apply bg-gradient-to-br from-card to-card-soft 
+           border border-border-soft rounded-radius 
+           shadow-soft hover:shadow-medium 
+           transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .mood-card {
+    @apply bg-gradient-to-r from-secondary-soft to-tertiary-soft 
+           rounded-radius-lg p-6 shadow-soft 
+           hover:shadow-medium transition-all duration-300;
+  }
+
+  /* Navigation styles */
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-radius-sm 
+           transition-all duration-200 hover:bg-muted/50 
+           text-muted-foreground hover:text-foreground;
+  }
+
+  .nav-item.active {
+    @apply bg-primary/10 text-primary border-r-2 border-primary;
+  }
+
+  /* Gentle form inputs */
+  .wellness-input {
+    @apply bg-input border border-border-soft rounded-radius 
+           px-4 py-3 transition-all duration-200 
+           focus:border-primary focus:ring-2 focus:ring-primary/20 
+           placeholder:text-muted-foreground;
+  }
+
+  /* Success animations */
+  .success-bounce {
+    @apply animate-bounce;
+  }
+
+  /* Breathing exercise animation */
+  .breathing-circle {
+    @apply animate-pulse;
+    animation-duration: 4s;
+  }
+}
