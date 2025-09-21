@@ -82,9 +82,3 @@ A responsive and accessible mental wellness web application designed for young u
 ### Prerequisites
 - Node.js (v16+)
 - npm or yarn
-
-### Installation
-```bash
-git clone https://github.com/your-username/youth-mental-wellness-app.git
-cd youth-mental-wellness-app
-npm install
